@@ -6,6 +6,7 @@ import 'package:responsive_dash_board/widget/user_info_tile.dart';
 
 import '../generated/assets.dart';
 import '../models/drawer_item_model.dart';
+import '../models/user_info_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -16,7 +17,7 @@ class CustomDrawer extends StatelessWidget {
       color: AppColor.white,
       child:CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: UserInfoTile(title: "Lekan Okeowo", imagePath: Assets.imagesAvatar3, subtitle: "demo@gmail.com")),
+          SliverToBoxAdapter(child: UserInfoTile(userInfo: UserInfoModel.userInfoList[0],)),
           DrawerItemList(),
           SliverFillRemaining(
             hasScrollBody: false,
