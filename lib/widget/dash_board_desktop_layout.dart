@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/widget/income_section.dart';
 import 'package:responsive_dash_board/widget/my_card_and_my_tranaction.dart';
 import 'custom_drawer.dart';
 import 'desktop_body.dart';
@@ -20,11 +21,14 @@ class DashBoardDesktopLayout extends StatelessWidget {
            SizedBox(
           width: 28,
         ),
-        Expanded(flex: 2,child: Column(
-
+        Expanded(flex: 2,
+        child: SingleChildScrollView(
+          child: Column(
           children: [
             SizedBox(height: 40,),
             MyCardAndMyTranaction(),
+             SizedBox(height: 24,),
+             IncomeSection(),
             
         
             
@@ -34,7 +38,7 @@ class DashBoardDesktopLayout extends StatelessWidget {
 
 
 
-      ],
+    )],
 
     );
   }
