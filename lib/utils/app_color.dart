@@ -7,6 +7,8 @@ static const Color lightBlue = Color(0xFF064061);
 static const Color white = Color(0xFFFFFFFF);
 static const Color offWhite = Color(0xFFFAFAFA);
 static const Color gray = Color(0xFFAAAAAA);
+static const Color green =  Color(0xFF7CD87A);
+static const Color red = Color(0xFFF3735E);
 
 
 
