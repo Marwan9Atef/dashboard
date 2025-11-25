@@ -16,7 +16,10 @@ class DashBoardDesktopLayout extends StatelessWidget {
           width: 32,
         ),
         Expanded(flex: 3,child: SingleChildScrollView(
-          child: DesktopBody()
+          child: Padding(
+            padding: const EdgeInsets.only(top:40),
+            child: DesktopBody(),
+          )
         )),
            SizedBox(
           width: 28,
