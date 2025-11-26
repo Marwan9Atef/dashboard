@@ -16,27 +16,45 @@ class _AllExpensesItemListState extends State<AllExpensesItemList> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: AllExpensesItemModel.allExpensesItemModel.asMap().entries.map((e) {
-
-        return Expanded(
+      children: [
+        Expanded(
           child: GestureDetector(
-            onTap: (){
-              if(e.key!=currentIndex){
-                setState(() {
-                  currentIndex=e.key;
-                });
-              }
-
+            onTap: () {
+                 updateIndex(0);
+              
             },
-            child: Padding(
-              padding: e.key==1?const EdgeInsets.symmetric(horizontal: 12.0):EdgeInsets.zero,
-              child: AllExpensesItem(allExpensesItemModel: e.value,isSelected: currentIndex==e.key,),
-            ),
+            child: AllExpensesItem(allExpensesItemModel: AllExpensesItemModel.allExpensesItemModel[0], isSelected: currentIndex==0,),
           ),
-        );
-
-      },).toList(),
-
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItem(allExpensesItemModel: AllExpensesItemModel.allExpensesItemModel[1], isSelected: currentIndex==1,),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItem(allExpensesItemModel: AllExpensesItemModel.allExpensesItemModel[2], isSelected: currentIndex==2,),
+          ),
+        )
+      ],
     );
+    
+  }
+    void updateIndex(int index) {
+    setState(() {
+      currentIndex = index;
+    });
   }
 }
