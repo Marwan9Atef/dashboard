@@ -41,7 +41,7 @@ class MyCard extends StatelessWidget {
              padding: const EdgeInsets.only(right:  24),
              child: Text("12/20 - 124",style: AppStyles.styleRegular16(context).copyWith(color: AppColor.white),),
            ),
-           SizedBox(height: 36,)
+           Flexible(child: SizedBox(height: 36,))
          ],
        ), 
       ),

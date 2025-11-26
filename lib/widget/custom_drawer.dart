@@ -15,40 +15,42 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColor.white,
-      child:CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(child: UserInfoTile(userInfo: UserInfoModel.userInfoList[0],)),
-          DrawerItemList(),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              children: [
-                Expanded(
-                    child: SizedBox(
-                      height: 20,
-                    )),
-                NotActiveDrawerItemTile(
-                  itemModel: DrawerItemModel(
-                      title: 'Setting system', imagePath: Assets.imagesSettings),
-                ),
-                NotActiveDrawerItemTile(
-                  itemModel: DrawerItemModel(
-                      title: 'Logout account', imagePath: Assets.imagesLogout),
-                ),
-                SizedBox(
-                  height: 48,
-                )
-
-
-              ],
-
-            ),
-          )
-          
-
-          
-        ],
+      child:SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: UserInfoTile(userInfo: UserInfoModel.userInfoList[0],)),
+            DrawerItemList(),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                children: [
+                  Expanded(
+                      child: SizedBox(
+                        height: 20,
+                      )),
+                  NotActiveDrawerItemTile(
+                    itemModel: DrawerItemModel(
+                        title: 'Setting system', imagePath: Assets.imagesSettings),
+                  ),
+                  NotActiveDrawerItemTile(
+                    itemModel: DrawerItemModel(
+                        title: 'Logout account', imagePath: Assets.imagesLogout),
+                  ),
+                  SizedBox(
+                    height: 48,
+                  )
         
+        
+                ],
+        
+              ),
+            )
+            
+        
+            
+          ],
+          
+        ),
       ),
 
     );

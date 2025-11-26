@@ -16,8 +16,14 @@ final UserInfoModel userInfo;
       color: AppColor.offWhite,
       child: ListTile(
         leading: SvgPicture.asset(userInfo.image),
-        title: Text(userInfo.title,style: AppStyles.styleSemiBold16(context),),
-        subtitle: Text(userInfo.subtitle,style: AppStyles.styleRegular12(context),),
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(userInfo.title,style: AppStyles.styleSemiBold16(context),)),
+        subtitle: FittedBox(
+           fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(userInfo.subtitle,style: AppStyles.styleRegular12(context),)),
 
 
       ),
